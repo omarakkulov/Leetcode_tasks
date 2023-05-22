@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @link https://leetcode.com/problems/two-sum/
+ * Учитывая массив целых чисел nums и целое число target, верните индексы двух чисел так, если их содержимое по индексу в сумме даст
+ * значение=target.
+ * <a href="https://leetcode.com/problems/two-sum/">Two Sum Task</a>
  */
 public class TwoSumTask {
 
@@ -37,7 +39,7 @@ public class TwoSumTask {
       }
       map.put(nums[i], i);
     }
-    
+
     return resultArray;
   }
 }
