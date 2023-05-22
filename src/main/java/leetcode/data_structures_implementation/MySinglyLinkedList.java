@@ -281,6 +281,24 @@ public class MySinglyLinkedList<T> {
   /**
    * Найти средний элемент в связном списке.
    */
+  public Node<T> findMiddleNodeFirstSolution() {
+    if (length == 0) {
+      return null;
+    }
+
+    Node<T> tmp = head;
+    int index = length / 2;
+
+    for (int i = 0; i < index; i++) {
+      tmp = tmp.next;
+    }
+
+    return tmp;
+  }
+
+  /**
+   * Найти средний элемент в связном списке.
+   */
   public Node<T> findMiddleNodeSecondSolution() {
     if (length == 0) {
       return null;
