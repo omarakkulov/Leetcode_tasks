@@ -315,6 +315,37 @@ public class MySinglyLinkedList<T> {
     return slow;
   }
 
+  /**
+   * Существует ли цикл в связном списке.
+   */
+  public boolean isLoopPresent() {
+    if (length == 0) {
+      return false;
+    }
+
+    Node<T> slow = head;
+    Node<T> fast = head;
+
+    while (true) {
+      fast = fast.next;
+      if (fast == slow) {
+        return true;
+      }
+      if (fast == null) {
+        return false;
+      }
+
+      slow = slow.next;
+      fast = fast.next;
+      if (fast == slow) {
+        return true;
+      }
+      if (fast == null) {
+        return false;
+      }
+    }
+  }
+
   public String getHead() {
     return String.format("Head={%s}", head.value);
   }
