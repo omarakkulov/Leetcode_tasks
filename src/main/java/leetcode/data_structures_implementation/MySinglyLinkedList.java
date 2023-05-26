@@ -346,6 +346,36 @@ public class MySinglyLinkedList<T> {
     }
   }
 
+  /**
+   * Найти ноду из конца списка по индексу. Индекс начинается с 1.
+   *
+   * @param index индекс
+   */
+  public Node<T> findKthFromEnd(int index) {
+    if (index < 0) {
+      return null;
+    }
+
+    Node<T> tmp = head;
+    int tailIndex = 0;
+    while (tmp.next != null) {
+      tmp = tmp.next;
+      tailIndex++;
+    }
+
+    if (index >= tailIndex + 2) {
+      return null;
+    }
+
+    Node<T> result = head;
+    int resultIndex = tailIndex - index + 1;
+    for (int i = 0; i < resultIndex; i++) {
+      result = result.next;
+    }
+
+    return result;
+  }
+
   public String getHead() {
     return String.format("Head={%s}", head.value);
   }
@@ -378,7 +408,7 @@ class Runner {
     linkedList.append(30);
     linkedList.append(40);
     linkedList.append(50);
-//    linkedList.append(60);
+    var kthFromEnd = linkedList.findKthFromEnd(6);
 
     var middleNode = linkedList.findMiddleNodeSecondSolution();
     System.out.println(middleNode);
