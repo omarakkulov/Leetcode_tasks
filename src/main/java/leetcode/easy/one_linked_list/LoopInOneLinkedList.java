@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.easy.one_linked_list;
 
 /**
  * Существует ли цикл в связном списке.
