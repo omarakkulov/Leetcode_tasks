@@ -1,10 +1,10 @@
-package leetcode.easy.one_linked_list;
+package leetcode.easy.single_linked_list;
 
 /**
  * Существует ли цикл в связном списке.
  * <a href="https://leetcode.com/problems/linked-list-cycle/">https://leetcode.com/problems/linked-list-cycle/</a>
  */
-public class LoopInOneLinkedList {
+public class LoopInSingleLinkedList {
 
 //  public boolean hasCycle(ListNode head) {
 //    ListNode slow = head;

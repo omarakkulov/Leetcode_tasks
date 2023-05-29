@@ -1,10 +1,10 @@
-package leetcode.easy.one_linked_list;
+package leetcode.easy.single_linked_list;
 
 /**
  * Найти средний элемент(то есть по центру) в односвязном списке.
  * <a href="https://leetcode.com/problems/middle-of-the-linked-list/description/">Middle Element Of The Linked List</a>
  */
-public class MiddleElementOfTheOneLinkedList {
+public class MiddleElementOfTheSingleLinkedList {
 
   /**
    * Найти средний элемент в связном списке, учитывая, что чья-то реализация списка имеет внутри класса поле length, где хранится количество

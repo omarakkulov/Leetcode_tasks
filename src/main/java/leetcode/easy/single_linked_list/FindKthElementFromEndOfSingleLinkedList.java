@@ -1,9 +1,9 @@
-package leetcode.easy.one_linked_list;
+package leetcode.easy.single_linked_list;
 
 /**
  * Найти k-тый элемент списка из конца по индексу. Индекс начинается с 1.
  */
-public class FindKthElementFromEndOfOneLinkedList {
+public class FindKthElementFromEndOfSingleLinkedList {
 
   /**
    * Найти ноду из конца списка по индексу. Индекс начинается с 1.

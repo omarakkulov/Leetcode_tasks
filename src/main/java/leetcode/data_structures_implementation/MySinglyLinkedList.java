@@ -1,11 +1,12 @@
 package leetcode.data_structures_implementation;
 
+import java.util.Iterator;
 import lombok.ToString;
 
 /**
  * Реализация односвязного списка.
  */
-public class MySinglyLinkedList<T> {
+public class MySinglyLinkedList<T> implements Iterable<T> {
 
   private Node<T> head;
   private Node<T> tail;
@@ -388,6 +389,25 @@ public class MySinglyLinkedList<T> {
     return String.format("Length={%s}", length);
   }
 
+  @Override
+  public Iterator<T> iterator() {
+    return new Iterator<T>() {
+      Node<T> current = head;
+
+      @Override
+      public boolean hasNext() {
+        return current != null;
+      }
+
+      @Override
+      public T next() {
+        var value = current.value;
+        current = current.next;
+        return value;
+      }
+    };
+  }
+
   @ToString
   private class Node<T> {
 
@@ -408,9 +428,13 @@ class Runner {
     linkedList.append(30);
     linkedList.append(40);
     linkedList.append(50);
-    var kthFromEnd = linkedList.findKthFromEnd(6);
+//    var kthFromEnd = linkedList.findKthFromEnd(6);
+//
+//    var middleNode = linkedList.findMiddleNodeSecondSolution();
+//    System.out.println(middleNode);
 
-    var middleNode = linkedList.findMiddleNodeSecondSolution();
-    System.out.println(middleNode);
+    for (Integer element : linkedList) {
+      System.out.println(element);
+    }
   }
 }
