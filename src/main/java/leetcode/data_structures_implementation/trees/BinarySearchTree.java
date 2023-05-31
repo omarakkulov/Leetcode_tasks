@@ -1,4 +1,4 @@
-package leetcode.easy.trees;
+package leetcode.data_structures_implementation.trees;
 
 
 /**
@@ -155,7 +155,7 @@ public class BinarySearchTree {
   }
 }
 
-class Runner {
+class BstRunner {
 
   public static void main(String[] args) {
     BinarySearchTree binarySearchTree = new BinarySearchTree();

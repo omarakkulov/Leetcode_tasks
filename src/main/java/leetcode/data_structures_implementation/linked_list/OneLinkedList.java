@@ -1,4 +1,4 @@
-package leetcode.data_structures_implementation;
+package leetcode.data_structures_implementation.linked_list;
 
 import java.util.Iterator;
 import lombok.ToString;
@@ -6,13 +6,13 @@ import lombok.ToString;
 /**
  * Реализация односвязного списка.
  */
-public class MySinglyLinkedList<T> implements Iterable<T> {
+public class OneLinkedList<T> implements Iterable<T> {
 
   private Node<T> head;
   private Node<T> tail;
   private int length;
 
-  public MySinglyLinkedList(T value) {
+  public OneLinkedList(T value) {
     Node<T> newNode = new Node<T>(value);
     this.head = newNode;
     this.tail = newNode;
@@ -420,10 +420,10 @@ public class MySinglyLinkedList<T> implements Iterable<T> {
   }
 }
 
-class Runner {
+class OllRunner {
 
   public static void main(String[] args) {
-    MySinglyLinkedList<Integer> linkedList = new MySinglyLinkedList<>(10);
+    OneLinkedList<Integer> linkedList = new OneLinkedList<>(10);
     linkedList.append(20);
     linkedList.append(30);
     linkedList.append(40);
