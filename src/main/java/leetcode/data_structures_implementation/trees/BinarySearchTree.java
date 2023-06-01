@@ -1,6 +1,11 @@
 package leetcode.data_structures_implementation.trees;
 
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * Бинарное дерево поиска.
  */
@@ -134,6 +139,108 @@ public class BinarySearchTree {
     return false;
   }
 
+  /**
+   * breadth first search. Обход дерева в ширину.
+   */
+  public List<Integer> BFS() {
+    Node currentNode = root;
+    if (currentNode == null) {
+      return null;
+    }
+
+    List<Integer> results = new ArrayList<>();
+    Queue<Node> queue = new LinkedList<>();
+
+    queue.add(currentNode);
+    while (queue.size() > 0) {
+      currentNode = queue.remove();
+      results.add(currentNode.value);
+
+      if (currentNode.left != null) {
+        queue.add(currentNode.left);
+      }
+
+      if (currentNode.right != null) {
+        queue.add(currentNode.right);
+      }
+    }
+
+    return results;
+  }
+
+  /**
+   * Обход в глубину preOrder. Сначала заносится рутовый элемент в массив, потом тот что левее от него, затем тот, что правее.
+   */
+  public List<Integer> DFSPreOrder() {
+    List<Integer> results = new ArrayList<>();
+
+    class Traverse {
+
+      Traverse(Node currentNode) {
+        results.add(currentNode.value);
+        if (currentNode.left != null) {
+          new Traverse(currentNode.left);
+        }
+        if (currentNode.right != null) {
+          new Traverse(currentNode.right);
+        }
+      }
+    }
+
+    new Traverse(root);
+
+    return results;
+  }
+
+  /**
+   * Обход в глубину postOrder. Сначала заносится минимальный элемент, который будет найден в дереве, то есть слева. Дальше поднимаемся на
+   * уровень выше и берем тот, что правее минимального по уровню и заносим также в массив. А потом уже тот что выше этих двух по уровню.
+   */
+  public List<Integer> DFSPostOrder() {
+    List<Integer> results = new ArrayList<>();
+
+    class Traverse {
+
+      Traverse(Node currentNode) {
+        if (currentNode.left != null) {
+          new Traverse(currentNode.left);
+        }
+        if (currentNode.right != null) {
+          new Traverse(currentNode.right);
+        }
+        results.add(currentNode.value);
+      }
+    }
+
+    new Traverse(root);
+
+    return results;
+  }
+
+  /**
+   * Обход в глубину postOrder. Элементы заносятся в массив и в результате будет отсортированный список по возрастанию элементов.
+   */
+  public List<Integer> DFSInOrder() {
+    List<Integer> results = new ArrayList<>();
+
+    class Traverse {
+
+      Traverse(Node currentNode) {
+        if (currentNode.left != null) {
+          new Traverse(currentNode.left);
+        }
+        results.add(currentNode.value);
+        if (currentNode.right != null) {
+          new Traverse(currentNode.right);
+        }
+      }
+    }
+
+    new Traverse(root);
+
+    return results;
+  }
+
   private static class Node {
 
     public Node(int value) {
@@ -169,9 +276,13 @@ class BstRunner {
     binarySearchTree.insert(9);
     binarySearchTree.insert(30);
 
-    var contains = binarySearchTree.contains1(1);
+//    var contains = binarySearchTree.contains1(1);
+//
+//    System.out.println(binarySearchTree);
+//    System.out.println(contains);
 
-    System.out.println(binarySearchTree);
-    System.out.println(contains);
+    var bfs = binarySearchTree.BFS();
+    var dfsInOrder = binarySearchTree.DFSInOrder();
+    System.out.println(dfsInOrder);
   }
 }
