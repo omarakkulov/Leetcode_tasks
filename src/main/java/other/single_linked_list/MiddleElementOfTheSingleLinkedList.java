@@ -1,6 +1,6 @@
-package leetcode.easy.single_linked_list;
+package other.single_linked_list;
 
-import leetcode.data_structures_implementation.linked_list.OneLinkedList;
+import other.data_structures_implementation.linked_list.OneLinkedList;
 
 /**
  * Найти средний элемент(то есть по центру) в односвязном списке.

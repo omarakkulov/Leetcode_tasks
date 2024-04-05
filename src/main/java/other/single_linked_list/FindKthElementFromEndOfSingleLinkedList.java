@@ -1,4 +1,4 @@
-package leetcode.easy.single_linked_list;
+package other.single_linked_list;
 
 /**
  * Найти k-тый элемент списка из конца по индексу. Индекс начинается с 1.

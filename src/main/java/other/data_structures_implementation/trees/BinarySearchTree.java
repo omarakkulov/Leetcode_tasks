@@ -1,4 +1,4 @@
-package leetcode.data_structures_implementation.trees;
+package other.data_structures_implementation.trees;
 
 
 import java.util.ArrayList;

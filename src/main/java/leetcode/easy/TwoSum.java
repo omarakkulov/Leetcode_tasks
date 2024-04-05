@@ -9,9 +9,10 @@ import java.util.Map;
  * значение=target.
  * <a href="https://leetcode.com/problems/two-sum/">Two Sum Task</a>
  */
-public class TwoSumTask {
+public class TwoSum {
 
   public static void main(String[] args) {
+
     System.out.println(Arrays.toString(twoSum2(new int[]{1, 3, 6}, 7)));
   }
 
@@ -23,23 +24,24 @@ public class TwoSumTask {
         }
       }
     }
-
-    throw new RuntimeException();
+    throw new RuntimeException("cannot find numbers to solution");
   }
-
 
   public static int[] twoSum2(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
-    int[] resultArray = new int[2];
+
+    int[] resultArr = new int[2];
 
     for (int i = 0; i < nums.length; i++) {
       if (map.containsKey(target - nums[i])) {
-        resultArray[0] = map.get(target - nums[i]);
-        resultArray[1] = i;
+        resultArr[0] = map.get(target - nums[i]);
+        resultArr[1] = i;
+      } else {
+        map.put(nums[i], i);
       }
-      map.put(nums[i], i);
     }
 
-    return resultArray;
+    return resultArr;
   }
+
 }

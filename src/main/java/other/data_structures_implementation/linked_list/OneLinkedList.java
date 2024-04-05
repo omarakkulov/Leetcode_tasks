@@ -1,4 +1,4 @@
-package leetcode.data_structures_implementation.linked_list;
+package other.data_structures_implementation.linked_list;
 
 import java.util.Iterator;
 import lombok.ToString;

@@ -1,6 +1,6 @@
-package leetcode.easy.trees;
+package other.trees;
 
-import leetcode.easy.trees.MaximumSumOfRouteFromRootToLeafBinaryTree2.Node;
+import other.trees.MaximumSumOfRouteFromRootToLeafBinaryTree2.Node;
 
 /**
  * Поиск максимальной суммы из листа к корневому(рутовому) пути.
